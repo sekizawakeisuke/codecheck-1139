@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/api/projects',function (req, res, next){
   knex.select('*').from('projects')
-  .then(function ('projects'){
+  .then(function (projects){
     res.json(projects);
     return next();
   })
