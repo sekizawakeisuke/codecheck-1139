@@ -32,3 +32,22 @@ app.post('/api/badrequest', function (req, res, next) {
 app.listen(port, function () {
   console.log('Server running with port', port);
 });
+
+/** @ToDo
+  * Initialize database
+  * this is for 'in-memory' database and should be removed
+  */
+var sqls = require('fs')
+  .readFileSync(__dirname + '/specifications/database.sql')
+  .toString();
+
+knex.raw(sqls)
+  .then(function () {
+    /** @ToDo
+      * Run server after database initialization
+      * this is for 'in-memory' database and should be removed
+      */
+    app.listen(port, function () {
+      console.log("Server running with port", port)
+    });
+  });
