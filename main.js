@@ -38,8 +38,27 @@ app.get('/api/notfound', function (req, res, next) {
 });
 
 app.post('/api/badrequest', function (req, res, next) {
-  res.status(400).json('BadRequest');
-  return next();
+  var
+    title = req.body.title,
+    description = req.body.description,
+    url = req.body.url;
+    
+    knex('projects').insert({
+      title; title,
+      description; descriptiion,
+      url: url
+    }).then(function (ids){
+      res.json({
+        id: ids[0],
+        title: title,
+        description: description,
+        url: url
+      })
+      return next();
+    }).catch(function (err) {
+      res.status(500).json(err);
+      return next();
+    });
 })
 
 
