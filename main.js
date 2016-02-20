@@ -15,12 +15,13 @@ app.use(parser.urlenclosed({ extended: false}));
 app.use(parser.json());
 app.use(express.static(__dirname + '/public'))
 
+/**
 app.get('/',function (req, res, next){
     res.json("ww");
     return next();
   });
 
-/**  
+
 app.get('/api/projects',function (req, res, next){
   knex.select('*').from('projects')
   .then(function (projects){
