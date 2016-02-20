@@ -19,7 +19,8 @@ app.get('/',function (req, res, next){
     res.json("ww");
     return next();
   });
-  
+
+/**  
 app.get('/api/projects',function (req, res, next){
   knex.select('*').from('projects')
   .then(function (projects){
@@ -31,6 +32,7 @@ app.get('/api/projects',function (req, res, next){
     return next();
   });
 });
+**/
 
 app.get('/api/ping', function (req, res, next) {
   res.json('PONG');
