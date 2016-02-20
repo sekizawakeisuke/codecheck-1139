@@ -14,6 +14,18 @@ var
 app.use(parser.json());
 app.use(express.static(__dirname + '/public'))
 
+app.get('/api/projects',function (req, res, next){
+  knex.select('*').from('projects')
+  .then(function ('projects'){
+    res.json(projects);
+    return next();
+  })
+  .catch(function (err) {
+    res.status(500).json(err);
+    return next();
+  });
+});
+
 app.get('/api/ping', function (req, res, next) {
   res.json('PONG');
   return next();
