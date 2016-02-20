@@ -4,11 +4,14 @@ var
   app = express(),
   port = process.env.PORT || 3000,
   parser = require('body-parser');
+  /*
   var knex = require('knex')({
     client: 'sqlite3',
     connection: {
         filename:":memory:"
     }
+    */
+    
   })
 
 /*app.use(parser.urlenclosed({ extended: false}));
