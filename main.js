@@ -11,6 +11,7 @@ var
     }
   })
 
+app.use(parser.urlenclosed({ extended: false}));
 app.use(parser.json());
 app.use(express.static(__dirname + '/public'))
 
@@ -41,9 +42,7 @@ app.post('/api/badrequest', function (req, res, next) {
   return next();
 })
 
-app.listen(port, function () {
-  console.log('Server running with port', port);
-});
+
 
 /** @ToDo
   * Initialize database
