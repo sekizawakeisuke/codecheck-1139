@@ -16,6 +16,7 @@ app.use(parser.json());
 app.use(express.static(__dirname + '/public'))
 
 app.get('/',function (req, res, next){
+    res.json("ww");
     return next();
   });
   
