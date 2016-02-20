@@ -44,7 +44,7 @@ app.post('/api/badrequest', function (req, res, next) {
     url = req.body.url;
     
     knex('projects').insert({
-      title; title,
+      title: title,
       description; descriptiion,
       url: url
     }).then(function (ids){
