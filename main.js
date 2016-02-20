@@ -11,7 +11,9 @@ var
     }
   })
 
-app.use(parser.urlenclosed({ extended: false}));
+/*app.use(parser.urlenclosed({ extended: false}));
+*/
+
 app.use(parser.json());
 app.use(express.static(__dirname + '/public'))
 
@@ -45,6 +47,7 @@ app.get('/api/notfound', function (req, res, next) {
   return next();
 });
 
+/*
 app.post('/api/badrequest', function (req, res, next) {
   var
     title = req.body.title,
@@ -68,7 +71,7 @@ app.post('/api/badrequest', function (req, res, next) {
       return next();
     });
 })
-
+*/
 
 
 /** @ToDo
