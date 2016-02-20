@@ -74,6 +74,7 @@ app.post('/api/badrequest', function (req, res, next) {
   * Initialize database
   * this is for 'in-memory' database and should be removed
   */
+  /**
 var sqls = require('fs')
   .readFileSync(__dirname + '/specifications/database.sql')
   .toString();
@@ -88,3 +89,4 @@ knex.raw(sqls)
       console.log("Server running with port", port)
     });
   });
+**/
